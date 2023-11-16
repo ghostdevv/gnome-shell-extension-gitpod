@@ -1,11 +1,10 @@
 {
-    "name": "Hello World",
-    "version": "1.0.0",
-    "description": "Simple Gnome Shell Hello World Extension example",
-    "uuid": "hello-world-example@gjsify.gnome-shell",
-    "settings-schema": "gnome-shell.gjsify.hello-world-example",
+    "name": "Gitpod",
+    "version": "0.0.0",
+    "description": "Gnome Extension for interacting with Gitpod",
+    "uuid": "gnome-gitpod@willow.sh",
     "shell-version": [
         "45"
     ],
-    "url": "https://github.com/gjsify/gnome-shell/tree/main/examples/hello-world"
+    "url": "https://github.com/ghostdevv/gnome-shell-extension-gitpod"
 }

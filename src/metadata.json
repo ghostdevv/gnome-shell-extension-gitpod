@@ -1,5 +1,6 @@
 {
     "name": "Hello World",
+    "version": "1.0.0",
     "description": "Simple Gnome Shell Hello World Extension example",
     "uuid": "hello-world-example@gjsify.gnome-shell",
     "settings-schema": "gnome-shell.gjsify.hello-world-example",

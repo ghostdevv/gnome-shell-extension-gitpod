@@ -7,6 +7,9 @@
         "build": "node build.js"
     },
     "devDependencies": {
+        "@girs/gjs": "^3.2.5",
+        "@girs/gnome-shell": "^3.0.0",
+        "@girs/st-13": "13.0.0-3.2.5",
         "adm-zip": "^0.5.10",
         "esbuild": "^0.19.5",
         "nodemon": "^2.0.22",

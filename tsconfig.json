@@ -3,10 +3,10 @@
         "lib": [
             "ESNext"
         ],
-        "types": [],
+        "types": ["@girs/gjs", "@girs/st-13",],
         "target": "ESNext",
         "module": "ESNext",
-        "moduleResolution": "Bundler"
+        "moduleResolution": "Bundler",
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts"]
 }

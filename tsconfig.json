@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "ESNext"
+        ],
+        "types": [],
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Bundler"
+    },
+    "include": ["src/**/*.ts", "src/**/*.d.ts"]
+}

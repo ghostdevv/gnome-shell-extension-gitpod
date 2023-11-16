@@ -1,0 +1,16 @@
+{
+    "private": true,
+    "type": "module",
+    "main": "src/index.ts",
+    "scripts": {
+        "dev": "nodemon -e js,ts --loader tsm .",
+        "build": "node build.js"
+    },
+    "devDependencies": {
+        "adm-zip": "^0.5.10",
+        "esbuild": "^0.19.5",
+        "nodemon": "^2.0.22",
+        "tsm": "^2.3.0",
+        "typescript": "^4.9.5"
+    }
+}

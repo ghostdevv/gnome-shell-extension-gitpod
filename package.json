@@ -9,6 +9,7 @@
     "devDependencies": {
         "@girs/gjs": "^3.2.5",
         "@girs/gnome-shell": "^3.0.0",
+        "@girs/soup-3.0": "3.4.4-3.2.5",
         "@girs/st-13": "13.0.0-3.2.5",
         "nodemon": "^2.0.22",
         "tsm": "^2.3.0",

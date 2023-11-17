@@ -14,6 +14,9 @@ importers:
       '@girs/gnome-shell':
         specifier: ^3.0.0
         version: 3.0.0
+      '@girs/soup-3.0':
+        specifier: 3.4.4-3.2.5
+        version: 3.4.4-3.2.5
       '@girs/st-13':
         specifier: 13.0.0-3.2.5
         version: 13.0.0-3.2.5
@@ -885,6 +888,15 @@ packages:
       '@girs/harfbuzz-0.0': 8.2.1-3.2.5
       '@girs/pango-1.0': 1.51.0-3.2.5
       '@girs/pangocairo-1.0': 1.0.0-3.2.5
+    dev: true
+
+  /@girs/soup-3.0@3.4.4-3.2.5:
+    resolution: {integrity: sha512-uyXZlGnC3IRcRJVO2+ctKVWitj0rTegitGmgGoGuWUIaONHrb4SK96is082x9jXlzEvzOKaP0oZy12fOoEsTEQ==}
+    dependencies:
+      '@girs/gio-2.0': 2.78.0-3.2.5
+      '@girs/gjs': 3.2.5
+      '@girs/glib-2.0': 2.78.0-3.2.5
+      '@girs/gobject-2.0': 2.78.0-3.2.5
     dev: true
 
   /@girs/st-12@12.0.0-3.2.5:

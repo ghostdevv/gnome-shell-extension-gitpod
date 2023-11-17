@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      '@girs/adw-1':
+        specifier: 1.4.0-3.2.5
+        version: 1.4.0-3.2.5
       '@girs/gjs':
         specifier: ^3.2.5
         version: 3.2.5
@@ -268,6 +271,26 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@girs/adw-1@1.4.0-3.2.5:
+    resolution: {integrity: sha512-NSH5IXCFsLO9UGAcGL2+3uGB2zab/BswCbNZv+MUan1d3VNEZac/S3qv+eGRzbi/9LgEzHVP4Zv+B4fvNn3cWg==}
+    dependencies:
+      '@girs/cairo-1.0': 1.0.0-3.2.5
+      '@girs/freetype2-2.0': 2.0.0-3.2.5
+      '@girs/gdk-4.0': 4.0.0-3.2.5
+      '@girs/gdkpixbuf-2.0': 2.0.0-3.2.5
+      '@girs/gio-2.0': 2.78.0-3.2.5
+      '@girs/gjs': 3.2.5
+      '@girs/glib-2.0': 2.78.0-3.2.5
+      '@girs/gmodule-2.0': 2.0.0-3.2.5
+      '@girs/gobject-2.0': 2.78.0-3.2.5
+      '@girs/graphene-1.0': 1.0.0-3.2.5
+      '@girs/gsk-4.0': 4.0.0-3.2.5
+      '@girs/gtk-4.0': 4.12.3-3.2.5
+      '@girs/harfbuzz-0.0': 8.2.1-3.2.5
+      '@girs/pango-1.0': 1.51.0-3.2.5
+      '@girs/pangocairo-1.0': 1.0.0-3.2.5
+    dev: true
 
   /@girs/atk-1.0@2.45.1-3.2.2:
     resolution: {integrity: sha512-+ba+w8s3CuIHBXNtfUtqbMy+lpa+SxY+ksu5i9QSINvKod6RHXSglXYiRAjKsP3nVyTc+FaF7ymYvqGbM42HHw==}

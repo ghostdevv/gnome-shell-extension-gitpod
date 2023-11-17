@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+    <schema id="org.gnome.shell.extensions.gnome-gitpod"
+        path="/org/gnome/shell/extensions/gnome-gitpod/">
+        <key name="access-token" type="s">
+            <summary>Your Gitpod Personal Access Token</summary>
+            <default>''</default>
+        </key>
+    </schema>
+</schemalist>

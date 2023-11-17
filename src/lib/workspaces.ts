@@ -2,7 +2,7 @@ import GLib from 'gi://GLib';
 import Soup from 'gi://Soup';
 import Gio from 'gi://Gio';
 
-export function getWorkspaces(): WorkspaceFetchResponse {
+export function getWorkspaces(accessToken: string): WorkspaceFetchResponse {
 	const session = Soup.Session.new();
 
 	const message = Soup.Message.new(
@@ -11,7 +11,7 @@ export function getWorkspaces(): WorkspaceFetchResponse {
 	);
 
 	message.request_headers.append('Content-Type', 'application/json');
-	message.request_headers.append('Authorization', 'Bearer TODO');
+	message.request_headers.append('Authorization', `Bearer ${accessToken}`);
 
 	const encoder = new TextEncoder();
 	const body = encoder.encode(JSON.stringify({}));

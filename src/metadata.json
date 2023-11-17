@@ -3,6 +3,7 @@
     "version": "0.0.0",
     "description": "Gnome Extension for interacting with Gitpod",
     "uuid": "gnome-gitpod@willow.sh",
+    "settings-schema": "org.gnome.shell.extensions.gnome-gitpod",
     "shell-version": [
         "45"
     ],

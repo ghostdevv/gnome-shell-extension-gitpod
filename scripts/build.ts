@@ -19,7 +19,7 @@ const DIST_DIR = join(import.meta.url, '../dist');
 await rm(DIST_DIR, { recursive: true, force: true });
 
 await build({
-	entryPoints: ['src/extension.ts'],
+	entryPoints: ['src/extension.ts', 'src/prefs.ts'],
 	outdir: 'dist',
 	bundle: true,
 	treeShaking: false,
@@ -40,6 +40,11 @@ await copyFile(
 
 // Copy icons
 await cp(join(import.meta.url, '../icons'), `${DIST_DIR}/icons`, {
+	recursive: true,
+});
+
+// Copy schemas
+await cp(join(import.meta.url, '../schemas'), `${DIST_DIR}/schemas`, {
 	recursive: true,
 });
 

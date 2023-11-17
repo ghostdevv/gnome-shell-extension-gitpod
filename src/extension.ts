@@ -12,10 +12,17 @@ import { gettext as _ } from 'gettext';
 import Gio from 'gi://Gio';
 import St from 'gi://St';
 
+function nullIfEmpty(string: any): string | null {
+	return typeof string == 'string' && string.trim().length > 0
+		? string
+		: null;
+}
+
 class Indicator {
 	public button: any;
 
-	constructor() {
+	constructor(settings: Gio.Settings) {
+		// * Setup
 		this.button = new Button(0.0, _('Gitpod Menu'));
 
 		this.button.add_actor(
@@ -28,26 +35,41 @@ class Indicator {
 			}),
 		);
 
-		const workspacesMenu = new PopupSubMenuMenuItem(_('Workspaces'));
-		const workspaces = getWorkspaces().result;
+		// todo refresh extension on change
+		const accessToken = nullIfEmpty(settings.get_string('access-token'));
 
-		for (const workspace of workspaces) {
-			const item = new PopupMenuItem(workspace.workspaceId);
+		// * Workspaces
+		if (accessToken) {
+			try {
+				const workspacesMenu = new PopupSubMenuMenuItem(
+					_('Workspaces'),
+				);
 
-			item.connect('activate', () => {
-				spawn([
-					'xdg-open',
-					`https://gitpod.io/start#${workspace.workspaceId}`,
-				]);
-			});
+				const workspaces = getWorkspaces(accessToken).result;
 
-			workspacesMenu.menu.addMenuItem(item);
+				for (const workspace of workspaces) {
+					const item = new PopupMenuItem(workspace.workspaceId);
+
+					item.connect('activate', () => {
+						spawn([
+							'xdg-open',
+							`https://gitpod.io/start#${workspace.workspaceId}`,
+						]);
+					});
+
+					workspacesMenu.menu.addMenuItem(item);
+				}
+
+				this.button.menu.addMenuItem(workspacesMenu);
+
+				//* HR
+				this.button.menu.addMenuItem(hr());
+			} catch {
+				// todo handle error, a notification maybe?
+			}
 		}
 
-		this.button.menu.addMenuItem(workspacesMenu);
-
-		this.button.menu.addMenuItem(hr());
-
+		// * gitpod.new
 		const item = new PopupMenuItem(_('New Empty Workspace'));
 
 		item.connect('activate', () => {
@@ -71,7 +93,7 @@ export default class GitpodExtension extends Extension {
 	enable() {
 		log(`enabling ${JSON.stringify(this.metadata, null, 2)}`);
 
-		this.indicator = new Indicator();
+		this.indicator = new Indicator(this.getSettings());
 		Main.panel.addToStatusArea(this.uuid, this.indicator.button);
 	}
 

@@ -3,7 +3,7 @@
         "lib": [
             "ESNext"
         ],
-        "types": ["@girs/gjs", "@girs/st-13", "@girs/soup-3.0"],
+        "types": ["@girs/gjs", "@girs/st-13", "@girs/soup-3.0", "@girs/adw-1"],
         "target": "ESNext",
         "module": "ESNext",
         "moduleResolution": "Bundler",

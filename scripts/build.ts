@@ -3,7 +3,7 @@
 /// <reference types="@types/node" />
 
 import metadata from '../src/metadata.json' assert { type: 'json' };
-import { copyFile, rm } from 'node:fs/promises';
+import { copyFile, rm, cp } from 'node:fs/promises';
 import { relative } from 'node:path';
 import { build } from 'esbuild';
 import AdmZip from 'adm-zip';
@@ -32,10 +32,16 @@ await build({
 
 const ZIP = `${DIST_DIR}/${metadata.uuid}.zip`;
 
+// Copy metadata.json
 await copyFile(
 	join(import.meta.url, '../src/metadata.json'),
 	`${DIST_DIR}/metadata.json`,
 );
+
+// Copy icons
+await cp(join(import.meta.url, '../icons'), `${DIST_DIR}/icons`, {
+	recursive: true,
+});
 
 const zip = new AdmZip();
 

@@ -14,8 +14,8 @@ pnpm install
 pnpm build
 
 # Install the extension
-gnome-extensions install --force dist/gnome-gitpod@willow.sh.zip
-gnome-extensions enable gnome-gitpod@willow.sh
+gnome-extensions install --force dist/gitpod@willow.sh.zip
+gnome-extensions enable gitpod@willow.sh
 ```
 
 You'll probably need to log out/in after every change, I've been doing this in a Gnome Nightly OS VM via [Gnome Boxes](https://help.gnome.org/users/gnome-boxes/stable/)

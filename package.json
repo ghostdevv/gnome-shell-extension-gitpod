@@ -3,7 +3,7 @@
     "type": "module",
     "main": "src/index.ts",
     "scripts": {
-        "local-install": "pnpm run build && gnome-extensions install --force dist/gnome-gitpod@willow.sh.zip && gnome-extensions enable gnome-gitpod@willow.sh",
+        "local-install": "pnpm run build && gnome-extensions install --force dist/gitpod@willow.sh.zip && gnome-extensions enable gitpod@willow.sh",
         "build": "tsm scripts/build.ts"
     },
     "devDependencies": {

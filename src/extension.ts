@@ -7,7 +7,7 @@ import { Button } from 'resource:///org/gnome/shell/ui/panelMenu.js';
 import { spawn } from 'resource:///org/gnome/shell/misc/util.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import { getWorkspaces } from './lib/workspaces';
-import { currentPath } from './lib/utils';
+import { currentPath, hr } from './lib/utils';
 import { gettext as _ } from 'gettext';
 import Gio from 'gi://Gio';
 import St from 'gi://St';
@@ -45,6 +45,8 @@ class Indicator {
 		}
 
 		this.button.menu.addMenuItem(workspacesMenu);
+
+		this.button.menu.addMenuItem(hr());
 
 		const item = new PopupMenuItem(_('New Empty Workspace'));
 
